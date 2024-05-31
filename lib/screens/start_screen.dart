@@ -13,7 +13,7 @@ class StartPage extends StatefulWidget {
 class _StartPageState extends State<StartPage> {
   @override
   void initState() {
-    Duration duration = Duration(seconds: 56);
+    Duration duration = Duration(milliseconds: 5600);
 
     method();
     // Future.delayed(duration, method);

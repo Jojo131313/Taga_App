@@ -2,6 +2,7 @@ import 'package:boutoratakpa_cc_project/screens/acceuil_screen.dart';
 import 'package:boutoratakpa_cc_project/screens/login_screen.dart';
 import 'package:boutoratakpa_cc_project/screens/start_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const TagaApp());
@@ -13,8 +14,11 @@ class TagaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        textTheme: GoogleFonts.miltonianTextTheme(),
+      ),
       themeMode: ThemeMode.system,
-      home: LoginScreen(),
+      home: Acceuil(),
       debugShowCheckedModeBanner: false,
     );
   }

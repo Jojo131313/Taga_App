@@ -11,12 +11,12 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  // Future<void> _navigateToHome() async {
-  //   Navigator.push(
-  //     context,
-  //     MaterialPageRoute(builder: (context) => Acceuil()),
-  //   );
-  // }
+  Future<void> _navigateToHome() async {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Acceuil()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -106,10 +106,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             fontWeight: FontWeight.w800),
                       ),
                     ),
-                    onPressed: () {}),
+                    onPressed: () {
+                      Future.delayed(
+                          const Duration(milliseconds: 2000), _navigateToHome);
+                    }),
                 Text(
-                  "------------ Or -------------",
-                  style: TextStyle(fontSize: 17),
+                  "------ Login with ------",
+                  style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500),
                 ),
                 Container(
                   height: 50,
