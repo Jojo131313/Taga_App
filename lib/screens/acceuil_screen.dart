@@ -11,7 +11,8 @@ class Acceuil extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 7,
         title: CircleAvatar(
-          backgroundImage: AssetImage("assets/icons/avatar.png"),        ),
+          backgroundImage: AssetImage("assets/images/avatar.jpg"),
+        ),
       ),
     );
   }
