@@ -1,5 +1,6 @@
 import 'package:boutoratakpa_cc_project/consts.dart';
 import 'package:boutoratakpa_cc_project/screens/acceuil_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -34,27 +35,21 @@ class _LoginScreenState extends State<LoginScreen> {
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.all(size.height * 0.030),
-            child: Column(
+            child: OverflowBar(
+              overflowAlignment: OverflowBarAlignment.center,
+              overflowSpacing: size.height * 0.010,
               children: [
                 Image.asset("assets/icons/login.png"),
-                Text(
-                  "Welcome",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Color.fromARGB(255, 20, 14, 197),
-                      fontWeight: FontWeight.bold),
-                ),
                 Text(
                   "Login",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 35,
-                      color: Color.fromARGB(255, 255, 255, 255),
+                      color: Color.fromARGB(255, 5, 34, 152),
                       fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
-                  height: size.height * 0.024,
+                  height: size.height * 0.015,
                 ),
                 TextField(
                   keyboardType: TextInputType.emailAddress,
@@ -73,9 +68,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.circular(37),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: size.height * 0.015,
                 ),
                 TextField(
                   obscureText: true,
@@ -96,6 +88,46 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+                CupertinoButton(
+                    child: Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.zero,
+                      height: size.height * 0.060,
+                      width: size.width * 0.600,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(38),
+                        color: Color.fromARGB(255, 5, 34, 152),
+                      ),
+                      child: Text(
+                        "Go",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 35,
+                            fontWeight: FontWeight.w800),
+                      ),
+                    ),
+                    onPressed: () {}),
+                Text(
+                  "------------ Or -------------",
+                  style: TextStyle(fontSize: 17),
+                ),
+                Container(
+                  height: 50,
+                  width: 200,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Image.asset(
+                        "assets/icons/facebook.png",
+                        height: 40,
+                      ),
+                      Image.asset(
+                        "assets/icons/google.png",
+                        height: 40,
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ),

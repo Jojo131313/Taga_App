@@ -54,7 +54,7 @@ class _StartPageState extends State<StartPage> {
   Widget build(BuildContext context) {
     return Material(
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 255, 204, 2),
+        backgroundColor: Color.fromRGBO(238, 159, 94, 0.98),
         body: Center(
           child: Container(
             margin: EdgeInsets.only(right: 8),
@@ -71,7 +71,7 @@ class _StartPageState extends State<StartPage> {
                 Text(
                   "Taga ",
                   style: TextStyle(
-                    color: Color.fromARGB(255, 147, 70, 194),
+                    color: Color.fromARGB(255, 255, 255, 255),
                     fontSize: 55,
                     fontWeight: FontWeight.bold,
                   ),
