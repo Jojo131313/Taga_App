@@ -33,9 +33,10 @@ class _AcceuilState extends State<Acceuil> {
         title: Text(
           "Taga",
           style: TextStyle(
-              fontSize: 35,
-              color: Color.fromARGB(255, 5, 34, 152),
-              fontWeight: FontWeight.bold),
+            fontSize: 35,
+            color: Color.fromARGB(255, 5, 34, 152),
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       drawer: Drawer(
@@ -107,26 +108,27 @@ class _AcceuilState extends State<Acceuil> {
               padding: EdgeInsets.all(16),
               child: TextField(
                 decoration: InputDecoration(
-                    hintText: "Search...",
-                    hintStyle: TextStyle(fontSize: 16),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50),
-                      borderSide: BorderSide(
-                        width: 0,
-                        style: BorderStyle.solid,
-                      ),
+                  hintText: "Search...",
+                  hintStyle: TextStyle(fontSize: 16),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(50),
+                    borderSide: BorderSide(
+                      width: 0,
+                      style: BorderStyle.solid,
                     ),
-                    filled: true,
-                    fillColor: const Color.fromARGB(255, 255, 255, 255),
-                    contentPadding: EdgeInsets.only(left: 30),
-                    suffixIcon: Padding(
-                      padding: EdgeInsets.only(right: 24, left: 16),
-                      child: Icon(
-                        Icons.search,
-                        color: Colors.black,
-                        size: 24,
-                      ),
-                    )),
+                  ),
+                  filled: true,
+                  fillColor: const Color.fromARGB(255, 255, 255, 255),
+                  contentPadding: EdgeInsets.only(left: 30),
+                  suffixIcon: Padding(
+                    padding: EdgeInsets.only(right: 24, left: 16),
+                    child: Icon(
+                      Icons.search,
+                      color: Colors.black,
+                      size: 24,
+                    ),
+                  ),
+                ),
               ),
             ),
           ),
@@ -151,9 +153,10 @@ class _AcceuilState extends State<Acceuil> {
                           Text(
                             "TOP DEALS",
                             style: TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.grey),
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey,
+                            ),
                           ),
                           Row(
                             children: [
@@ -207,14 +210,17 @@ class _AcceuilState extends State<Acceuil> {
                                 Text(
                                   "Available cars",
                                   style: TextStyle(
-                                      fontSize: 21,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white),
+                                    fontSize: 21,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
                                 ),
                                 Text(
                                   "Long term && short term",
                                   style: TextStyle(
-                                      fontSize: 14, color: Colors.white),
+                                    fontSize: 14,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ],
                             ),
@@ -246,9 +252,10 @@ class _AcceuilState extends State<Acceuil> {
                           Text(
                             "TOP DEALERS",
                             style: TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.grey),
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey,
+                            ),
                           ),
                           Row(
                             children: [
@@ -324,15 +331,42 @@ class _AcceuilState extends State<Acceuil> {
 
   List<Widget> buildNavigationItems() {
     List<Widget> list = [];
-    for (var i = 0; i < navigationItems.length; i++) {
-      list.add(buildNavigationItem(navigationItems[i]));
+    for (var navigationItem in navigationItems) {
+      list.add(buildNavigationItem(navigationItem));
     }
     return list;
   }
 
   Widget buildNavigationItem(NavigationItem item) {
-    return Container(
-      width: 50,
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          selectedItem = item;
+        });
+      },
+      child: Container(
+        width: 50,
+        child: Stack(
+          children: [
+            selectedItem == item
+                ? Center(
+                    child: Container(
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(shape: BoxShape.circle),
+                    ),
+                  )
+                : Container(),
+            Center(
+              child: Icon(
+                item.iconData,
+                color: selectedItem == item ? Colors.white : Colors.grey,
+                size: 24,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
