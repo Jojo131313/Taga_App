@@ -4,15 +4,32 @@ import 'package:flutter/material.dart';
 import 'package:boutoratakpa_cc_project/data.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Acceuil extends StatelessWidget {
+class Acceuil extends StatefulWidget {
+  @override
+  _AcceuilState createState() => _AcceuilState();
+}
+
+class _AcceuilState extends State<Acceuil> {
+  List<NavigationItem> navigationItems = getNavigationItemList();
+  late NavigationItem selectedItem;
+
   List<Car> cars = getCarList();
   List<Dealer> dealers = getDealerList();
+
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      selectedItem = navigationItems[0];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color.fromARGB(0, 247, 191, 93),
         title: Text(
           "Taga",
           style: TextStyle(
@@ -269,8 +286,22 @@ class Acceuil extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
         ],
+      ),
+      bottomNavigationBar: Container(
+        height: 70,
+        decoration: BoxDecoration(
+          color: Colors.orange,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: buildNavigationItems(),
+        ),
       ),
     );
   }
@@ -282,11 +313,26 @@ class Acceuil extends StatelessWidget {
     }
     return list;
   }
+
   List<Widget> buildDealers() {
     List<Widget> list = [];
     for (var i = 0; i < dealers.length; i++) {
       list.add(BuildDealers(dealers[i], i));
     }
     return list;
+  }
+
+  List<Widget> buildNavigationItems() {
+    List<Widget> list = [];
+    for (var i = 0; i < navigationItems.length; i++) {
+      list.add(buildNavigationItem(navigationItems[i]));
+    }
+    return list;
+  }
+
+  Widget buildNavigationItem(NavigationItem item) {
+    return Container(
+      width: 50,
+    );
   }
 }
