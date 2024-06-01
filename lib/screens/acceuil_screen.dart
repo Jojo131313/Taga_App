@@ -360,7 +360,7 @@ class _AcceuilState extends State<Acceuil> {
             Center(
               child: Icon(
                 item.iconData,
-                color: selectedItem == item ? Colors.white : Colors.grey,
+                color: selectedItem == item ? Colors.white : Color.fromARGB(255, 8, 29, 224),
                 size: 24,
               ),
             ),
