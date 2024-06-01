@@ -15,7 +15,7 @@ class TagaApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        textTheme: GoogleFonts.miltonianTextTheme(),
+        textTheme: GoogleFonts.robotoSlabTextTheme(),
       ),
       themeMode: ThemeMode.system,
       home: Acceuil(),
