@@ -63,11 +63,7 @@ class _StartPageState extends State<StartPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  child: Image.asset(
-                    "assets/icons/taga_logo.png",
-                    width: 100,
-                  ),
-                ),
+                  child: Image.asset("assets/icons/taga_logo.png",width: 100,), ),
                 Text(
                   "Taga ",
                   style: TextStyle(
