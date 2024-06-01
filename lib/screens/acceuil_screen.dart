@@ -1,5 +1,6 @@
 import 'package:boutoratakpa_cc_project/car_widget.dart';
 import 'package:boutoratakpa_cc_project/dealers_wiwdget.dart';
+import 'package:boutoratakpa_cc_project/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:boutoratakpa_cc_project/data.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -92,8 +93,10 @@ class _AcceuilState extends State<Acceuil> {
               leading: Icon(Icons.logout),
               title: Text('Log out'),
               onTap: () {
-                Navigator.pop(context);
-                // TODO: navigate to about page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                );
               },
             ),
           ],
@@ -360,7 +363,9 @@ class _AcceuilState extends State<Acceuil> {
             Center(
               child: Icon(
                 item.iconData,
-                color: selectedItem == item ? Colors.white : Color.fromARGB(255, 8, 29, 224),
+                color: selectedItem == item
+                    ? Colors.white
+                    : Color.fromARGB(255, 8, 29, 224),
                 size: 24,
               ),
             ),
