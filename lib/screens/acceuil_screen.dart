@@ -67,8 +67,29 @@ class _AcceuilState extends State<Acceuil> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Home'),
+              leading: Icon(Icons.account_circle),
+              title: Text('My Profile'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.save_alt),
+              title: Text('Saved Article'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.shopping_cart_rounded),
+              title: Text('Basket'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.info),
+              title: Text('About'),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -78,15 +99,6 @@ class _AcceuilState extends State<Acceuil> {
               title: Text('Settings'),
               onTap: () {
                 Navigator.pop(context);
-                // TODO: navigate to settings page
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.info),
-              title: Text('About'),
-              onTap: () {
-                Navigator.pop(context);
-                // TODO: navigate to about page
               },
             ),
             ListTile(
