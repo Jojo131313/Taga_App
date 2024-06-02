@@ -14,7 +14,7 @@ class _StartPageState extends State<StartPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 15), () {
+    Future.delayed(Duration(seconds: 5), () {
       method();
     });
   }
@@ -23,7 +23,7 @@ class _StartPageState extends State<StartPage> {
     // Obtain shared preferences.
     final prefs = await SharedPreferences.getInstance();
 
-    int counter = prefs.getInt('counter')?? 0;
+    int counter = prefs.getInt('counter') ?? 0;
 
     counter++;
 
@@ -61,7 +61,10 @@ class _StartPageState extends State<StartPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  child: Image.asset("assets/icons/taga_logo.png", width: 100,),
+                  child: Image.asset(
+                    "assets/icons/taga_logo.png",
+                    width: 100,
+                  ),
                 ),
                 Text(
                   "Taga ",

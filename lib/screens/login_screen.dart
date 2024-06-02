@@ -112,25 +112,57 @@ class _LoginScreenState extends State<LoginScreen> {
                     }),
                 Text(
                   "------ Login with ------",
-                  style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                 ),
-                Container(
-                  height: 50,
-                  width: 200,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Image.asset(
-                        "assets/icons/facebook.png",
-                        height: 40,
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                          ),
+                          fixedSize: MaterialStateProperty.all(Size(50, 50)),
+                          backgroundColor: MaterialStateProperty.all(
+                            Color.fromARGB(255, 0, 76, 255),
+                          ),
+                        ),
+                        onPressed: () {},
+                        child: const Text(
+                          "Facebook",
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
                       ),
-                      Image.asset(
-                        "assets/icons/google.png",
-                        height: 40,
+                    ),
+                    Expanded(
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                          ),
+                          fixedSize: MaterialStateProperty.all(Size(50, 50)),
+                          backgroundColor: MaterialStateProperty.all(
+                            Color.fromARGB(255, 0, 0, 0),
+                          ),
+                        ),
+                        onPressed: () {},
+                        child: const Text(
+                          "Google",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 252, 252, 252),
+                              fontSize: 20),
+                        ),
                       ),
-                    ],
-                  ),
-                )
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
