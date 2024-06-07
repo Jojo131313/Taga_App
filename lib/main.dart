@@ -1,4 +1,5 @@
 import 'package:boutoratakpa_cc_project/screens/acceuil_screen.dart';
+import 'package:boutoratakpa_cc_project/screens/availables_car_screen.dart';
 import 'package:boutoratakpa_cc_project/screens/login_screen.dart';
 import 'package:boutoratakpa_cc_project/screens/start_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,10 +16,10 @@ class TagaApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        textTheme: GoogleFonts.robotoSlabTextTheme(),
+        textTheme: GoogleFonts.inclusiveSansTextTheme(),
       ),
       themeMode: ThemeMode.system,
-      home: Acceuil(),
+      home: AvailablesCarScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
