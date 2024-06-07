@@ -18,7 +18,7 @@ class TagaApp extends StatelessWidget {
         textTheme: GoogleFonts.robotoSlabTextTheme(),
       ),
       themeMode: ThemeMode.system,
-      home: LoginScreen(),
+      home: Acceuil(),
       debugShowCheckedModeBanner: false,
     );
   }
