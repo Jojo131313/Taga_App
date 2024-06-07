@@ -1,5 +1,6 @@
 import 'package:boutoratakpa_cc_project/car_widget.dart';
 import 'package:boutoratakpa_cc_project/dealers_wiwdget.dart';
+import 'package:boutoratakpa_cc_project/screens/availables_car_screen.dart';
 import 'package:boutoratakpa_cc_project/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:boutoratakpa_cc_project/data.dart';
@@ -204,58 +205,68 @@ class _AcceuilState extends State<Acceuil> {
                         children: buildDeals(),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 16, right: 16, left: 16),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.orange,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(15),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AvailablesCarScreen(),
                           ),
-                        ),
-                        padding: EdgeInsets.all(24),
-                        height: 110,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Available cars",
-                                  style: TextStyle(
-                                    fontSize: 21,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
+                        );
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 16, right: 16, left: 16),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.orange,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(15),
+                            ),
+                          ),
+                          padding: EdgeInsets.all(24),
+                          height: 110,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Available cars",
+                                    style: TextStyle(
+                                      fontSize: 21,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Text(
+                                    "Long term && short term",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(15),
                                   ),
                                 ),
-                                Text(
-                                  "Long term && short term",
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    color: Colors.white,
+                                height: 50,
+                                width: 50,
+                                child: Center(
+                                  child: Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Color.fromARGB(255, 8, 29, 224),
                                   ),
                                 ),
-                              ],
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(15),
-                                ),
                               ),
-                              height: 50,
-                              width: 50,
-                              child: Center(
-                                child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: Color.fromARGB(255, 8, 29, 224),
-                                ),
-                              ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
